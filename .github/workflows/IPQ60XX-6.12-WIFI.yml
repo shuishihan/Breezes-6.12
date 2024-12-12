@@ -94,7 +94,7 @@ jobs:
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        chmod +x $GITHUB_WORKSPACE/$DIY_SCRIPT && $GITHUB_WORKSPACE/$DIY_SCRIPT
+        chmod +x $GITHUB_WORKSPACE/$DIY_SCRIPT && sh $GITHUB_WORKSPACE/$DIY_SCRIPT
         
     - name: Load Custom Configuration(加载自定义配置)
       run: |
