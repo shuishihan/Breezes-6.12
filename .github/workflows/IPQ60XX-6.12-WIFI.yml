@@ -92,12 +92,12 @@ jobs:
     - name: Install Feeds(安装feeds)
       run: |
         cd $OPENWRT_PATH
+        chmod +x $GITHUB_WORKSPACE/$DIY_SCRIPT && $GITHUB_WORKSPACE/$DIY_SCRIPT
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
     - name: Load Custom Configuration(加载自定义配置)
       run: |
-        chmod +x $GITHUB_WORKSPACE/$DIY_SCRIPT && $GITHUB_WORKSPACE/$DIY_SCRIPT
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
 
@@ -164,8 +164,8 @@ jobs:
           - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
-          - 🌐 默认地址: 192.168.1.1
-          - 🔑 默认密码: password
+          - 🌐 默认地址: 192.168.6.1
+          - 🔑 默认密码: 13456788
           ### 🧊 固件版本
           - 固件编译前最后一次➦[主源码](${{ env.REPO_URL }})更新记录
           - ${{ env.VERSION_INFO }}
