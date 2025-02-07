@@ -133,7 +133,7 @@ cp $GITHUB_WORKSPACE/S99turnoffled $GITHUB_WORKSPACE/openwrt/files/etc/rc.d
 chmod 755 $GITHUB_WORKSPACE/openwrt/files/etc/rc.d/S99turnoffled
 #自定义wifi设置
 WIFI_SH="$GITHUB_WORKSPACE/openwrt/package/base-files/files/etc/uci-defaults/990_set-wireless.sh"
-WIFI_UC="$GITHUB_WORKSPACE/openwrt//package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc"
+WIFI_UC="$GITHUB_WORKSPACE/openwrt/package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc"
 if [ -f "$WIFI_SH" ]; then
 	#修改WIFI名称
 	sed -i "s/BASE_SSID='.*'/BASE_SSID='Seven Win_2.4G'/g" $WIFI_SH
