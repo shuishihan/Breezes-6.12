@@ -123,8 +123,8 @@ git_sparse_clone main https://github.com/linkease/istore luci
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
 
-./scripts/feeds update -a
-./scripts/feeds install -a
+#./scripts/feeds update -a
+#./scripts/feeds install -a
 #修改雅典娜和亚瑟内核大小为12M
 sed -i 's/6144k/12288k/g' $GITHUB_WORKSPACE/openwrt/target/linux/qualcommax/image/ipq60xx.mk
 #测试，关闭LED
