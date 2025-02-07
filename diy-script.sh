@@ -89,8 +89,8 @@ git_sparse_clone main https://github.com/linkease/istore luci
 # 在线用户
 #git_sparse_clone main https://github.com/haiibo/packages luci-app-onliner
 #sed -i '$i uci set nlbwmon.@nlbwmon[0].refresh_interval=2s' package/lean/default-settings/files/zzz-default-settings
-%sed -i '$i uci commit nlbwmon' package/lean/default-settings/files/zzz-default-settings
-%chmod 755 package/luci-app-onliner/root/usr/share/onliner/setnlbw.sh
+#sed -i '$i uci commit nlbwmon' package/lean/default-settings/files/zzz-default-settings
+#chmod 755 package/luci-app-onliner/root/usr/share/onliner/setnlbw.sh
 
 # x86 型号只显示 CPU 型号
 #sed -i 's/${g}.*/${a}${b}${c}${d}${e}${f}${hydrid}/g' package/lean/autocore/files/x86/autocore
@@ -130,7 +130,7 @@ sed -i 's/6144k/12288k/g' $GITHUB_WORKSPACE/openwrt/target/linux/qualcommax/imag
 #测试，关闭LED
 mkdir -p $GITHUB_WORKSPACE/openwrt/files/etc/rc.d
 cp $GITHUB_WORKSPACE/S99turnoffled $GITHUB_WORKSPACE/openwrt/files/etc/rc.d
-chmod 777 $GITHUB_WORKSPACE/openwrt/files/etc/rc.d/S99turnoffled
+chmod 755 $GITHUB_WORKSPACE/openwrt/files/etc/rc.d/S99turnoffled
 #自定义wifi设置
 WIFI_SH="$GITHUB_WORKSPACE/openwrt/package/base-files/files/etc/uci-defaults/990_set-wireless.sh"
 WIFI_UC="$GITHUB_WORKSPACE/openwrt//package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc"
