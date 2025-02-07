@@ -105,8 +105,8 @@ jobs:
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
+        chmod 755 $GITHUB_WORKSPACE/diy-script.sh
         $GITHUB_WORKSPACE/diy-script.sh
-        
     - name: Download DL Package(下载DL软件包)
       run: |
         cd $OPENWRT_PATH
