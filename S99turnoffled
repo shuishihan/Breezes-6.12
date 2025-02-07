@@ -1,0 +1,7 @@
+#!/bin/ash
+for i in `ls /sys/class/leds`
+do
+cd /sys/class/leds
+cd $i
+echo 0 > brightness
+done
