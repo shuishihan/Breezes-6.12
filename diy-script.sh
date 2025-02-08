@@ -137,7 +137,7 @@ WIFI_SH="$GITHUB_WORKSPACE/openwrt/package/base-files/files/etc/uci-defaults/990
 WIFI_UC="$GITHUB_WORKSPACE/openwrt/package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc"
 if [ -f "$WIFI_SH" ]; then
 	#修改WIFI名称
-	sed -i "s/BASE_SSID='.*'/BASE_SSID='Seven Win_2.4G'/g" $WIFI_SH
+	sed -i "s/BASE_SSID='LiBwrt'/BASE_SSID='Seven Win_2.4G'/g" $WIFI_SH
 	#修改WIFI密码
 	sed -i "s/BASE_WORD='.*'/BASE_WORD='13456788'/g" $WIFI_SH
 elif [ -f "$WIFI_UC" ]; then
