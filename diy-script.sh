@@ -132,20 +132,6 @@ mkdir -p $GITHUB_WORKSPACE/openwrt/files/etc/rc.d
 cp $GITHUB_WORKSPACE/S99turnoffled $GITHUB_WORKSPACE/openwrt/files/etc/rc.d
 chmod 755 $GITHUB_WORKSPACE/openwrt/files/etc/rc.d/S99turnoffled
 
-#preset openclash core
-mkdir -p $GITHUB_WORKSPACE/openwrt/files/etc/openclash/core
-CLASH_DEV_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/dev/clash-linux-${1}.tar.gz"
-CLASH_TUN_URL=$(curl -fsSL https://api.github.com/repos/vernesong/OpenClash/contents/master/premium\?ref\=core | grep download_url | grep $1 | awk -F '"' '{print $4}' | grep -v 'v3')
-CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-${1}.tar.gz"
-GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
-GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
-wget -qO- $CLASH_DEV_URL | tar xOvz > $GITHUB_WORKSPACE/openwrt/files/etc/openclash/core/clash
-wget -qO- $CLASH_TUN_URL | gunzip -c > $GITHUB_WORKSPACE/openwrt/files/etc/openclash/core/clash_tun
-wget -qO- $CLASH_META_URL | tar xOvz > $GITHUB_WORKSPACE/openwrt/files/etc/openclash/core/clash_meta
-wget -qO- $GEOIP_URL > $GITHUB_WORKSPACE/openwrt/files/etc/openclash/GeoIP.dat
-wget -qO- $GEOSITE_URL > $GITHUB_WORKSPACE/openwrt/files/etc/openclash/GeoSite.dat
-chmod 755 $GITHUB_WORKSPACE/openwrt/files/etc/openclash/core/clash*
-
 #自定义wifi设置
 WIFI_SH="$GITHUB_WORKSPACE/openwrt/package/base-files/files/etc/uci-defaults/990_set-wireless.sh"
 WIFI_UC="$GITHUB_WORKSPACE/openwrt/package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc"
