@@ -145,4 +145,4 @@ elif [ -f "$WIFI_UC" ]; then
 	sed -i "s/ssid='.*'/ssid='Seven Win_2.4G'/g" $WIFI_UC
 	#修改WIFI密码
 	sed -i "s/key='.*'/key='13456788'/g" $WIFI_UC
-	
+fi	
