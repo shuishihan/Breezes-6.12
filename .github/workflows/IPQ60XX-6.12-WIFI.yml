@@ -113,7 +113,8 @@ jobs:
         $GITHUB_WORKSPACE/scripts/Packages.sh
         $GITHUB_WORKSPACE/scripts/Handles.sh
         $GITHUB_WORKSPACE/scripts/Settings.sh
-    
+        make defconfig -j$(nproc) && make clean -j$(nproc)
+
     - name: Download DL Package(下载DL软件包)
       run: |
         cd $OPENWRT_PATH
